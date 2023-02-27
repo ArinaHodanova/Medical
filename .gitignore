@@ -1,0 +1,7 @@
+composer.bat
+composer.phar
+composer.lock
+vendor/composer
+vendor/gabordemooij
+/tmp
+config/config_db.php
