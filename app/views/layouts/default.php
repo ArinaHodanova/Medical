@@ -1,8 +1,8 @@
 <html lang="ru">
 <head>
+  <base href="/">
   <meta charset="utf-8"/> 
   <title>Продажа мед оборудования</title>
-  <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
   <link rel="stylesheet" type="text/css" href="css/font.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">

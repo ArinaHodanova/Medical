@@ -224,11 +224,11 @@ counts.forEach(countFunc);
         var id = $(this).data('id'),//id товара
             gty = $('.product_card-quantity input').val() ? $('.product_card-quantity input').val() : 1;  //колличество
         $.ajax ({
-            url: '/catr/add',
-            data: {id: id, qty: gty},
+            url: '/cart/add',
+            data: {id: id, gty: gty},
             type: 'GET', 
             success: function(res) {
-                showCart(res) 
+                showCart(res);
             },
             error: function() {
                 alert('Ошибка! Попробуйте позже');
@@ -237,7 +237,8 @@ counts.forEach(countFunc);
     });
     
     function showCart(cart) {
-        alert(cart);
+        console.log(cart);
     }
   }); 
 /*Cart*/
+
