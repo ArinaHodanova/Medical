@@ -17,20 +17,19 @@ class Cart extends AppModel {
         } else {
             $prise = "Цена по запросу";
         }
-      echo(gettype($prise));
-        //добавить товар в сессию 
+
         if(isset($_SESSION['cart'][$id])) {
             $_SESSION['cart'][$id]['qty'] += $qty;
         } else {
             $_SESSION['cart'][$id] = [
-              'qty' => $qty,
+              'qty' => empty($qty) ? 1 : $qty,
               'title' => $title,
               'alias' => $product->alias,
-              'prise' => !empty($product->prise) ? $prise * $_SESSION['cart.currency']['value'] : "Цена по запросу",
+              'prise' => ($prise !== "Цена по запросу") ? $prise * $_SESSION['cart.currency']['value'] : 'Цена по запросу',
               'img' => $product->img,
             ];
         }
         $_SESSION['cart.qty'] = isset($_SESSION['cart.qty']) ? $_SESSION['cart.qty'] + $qty: $qty;
-        $_SESSION['cart.sum'] = isset($_SESSION['cart.sum']) ? $_SESSION['cart.sum'] + $qty * $_SESSION['cart.currency']['value'] : $qty * ($prise * $_SESSION['cart.currency']['value']);
+        $_SESSION['cart.sum'] = isset($_SESSION['cart.sum']) ? $_SESSION['cart.sum'] + $qty * ($prise * $_SESSION['cart.currency']['value']) : $qty * ($prise * $_SESSION['cart.currency']['value']);
     }
 }
