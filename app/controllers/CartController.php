@@ -8,7 +8,6 @@ class CartController extends AppController {
     public function addAction() {
         $id = !empty($_GET['id']) ? (int)$_GET['id'] : null;
         $gty = !empty($_GET['gty']) ? (int)$_GET['gty'] : null;
-        db($id);
         if($id) {
             $product = \R::findOne('product', 'id = ?', [$id]);
             if(!$product) {

@@ -20,7 +20,6 @@
   <script async src="js/fancybox.umd.js"></script>
   <script src="js/svgembedder.min.js"></script>
   <script async src="js/style.js"></script>
-  <script async src="js/main.js"></script>
   <script async src="js/slider.js"></script>
   
 </head>

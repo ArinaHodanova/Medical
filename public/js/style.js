@@ -239,9 +239,43 @@ counts.forEach(countFunc);
   }); 
 
 function showCart(cart) {
-    if($.trim(cart) == '<h2>Корзина пуста</h2>') {
-
+    if($.trim(cart) === '<h2>Корзина пуста</h2>') {
+        $('#cart .cart__footer .cart__btn-design, #cart .cart__footer .cart__btn-clear').css('display', 'none');
+    } else {
+        $('#cart .cart__footer .cart__btn-design, #cart .cart__footer .cart__btn-clear').css('display', 'block');
     }
+
+    //выводим в модальное окно содержимое корзины из вида 
+    $('#cart .cart__body').html(cart);
+
+    //показываем модальное окно
+    $('.add-to-cart-link').click(function() {
+      document.body.style="overflow: hidden";
+      //overlay.style.cssText = 'display: block; z-index: 90000';
+      $('.cart__fade').fadeIn();
+      return false;
+    });	
+    
+    $('.popup-close').click(function() {
+      $(this).parents('.cart__fade').fadeOut();
+      document.body.style.overflow="";
+      return false;
+    });		
+   
+    $(document).keydown(function(e) {
+      if (e.keyCode === 27) {
+        e.stopPropagation();
+        $('.cart__fade').fadeOut();
+        document.body.style.overflow="";		
+      }
+    });
+    
+    $('.cart__fade').click(function(e) {
+      if ($(e.target).closest('.popup').length == 0) {
+        $(this).fadeOut()
+        document.body.style.overflow="";
+      }	
+    });
 }
   
 /*Cart*/

@@ -10,14 +10,20 @@
 
 ?>
 <!--Корзина-->
-<div style="display: none; width: 500px;" id="cart" class="cart__fade">
+<div class="cart__fade" id="cart">
+	<div class="popup">
+		<a class="popup-close" href="#">Закрыть</a>
+
 	<h2 class="cart__title">Корзина</h2>
   <div class="cart__body">
 
   </div>
-  <button class="cart__btn-continue">Продолить покупки</button>
-  <a href="" class="cart__btn-design"> Оформить заказ</a>
-  <button class="cart__btn-clear">Очистить козину</button>
+  <div class="cart__footer">
+      <button class="cart__btn-continue">Продолить покупки</button>
+      <a href="" class="cart__btn-design"> Оформить заказ</a>
+      <button class="cart__btn-clear">Очистить козину</button>
+  </div>
+	</div>		
 </div>
 <!--/Корзина-->
 

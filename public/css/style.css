@@ -101,6 +101,72 @@ body {
   height: 8px;
   right: -15px;
 }
+
+/*модальное окно корзины*/
+
+.cart__body-row {
+  display: flex;
+  text-decoration: none;
+}
+.cart__body-img {
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+}
+.cart__body-img img {
+  object-position: center top;
+  object-fit: contain;
+  width: 90%;
+  height: 200px;
+}
+.cart__body-title {
+  font-size: 20px;
+  color: #38454b;
+  margin: 0 0 10px 0;
+  text-decoration: none;
+}
+.cart__body-text p {
+  margin: 0px;
+}
+.cart__fade {
+	display: none;
+}
+.cart__fade:before {
+	content: '';
+  position: fixed; 
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%;
+  background: #6a6a6a57;
+  z-index: 90000;
+}
+.popup {
+  overflow: auto;
+  align-items: center;
+  position: fixed;
+  top: 5%;
+  padding: 20px;
+  width: 50%;
+  background: #fff;
+  border: 1px solid orange;
+  border-radius: 4px;
+  z-index: 99999;
+  margin: auto;
+  right: 0;
+  left: 0;
+  height: 400;
+}
+.popup-close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+/**модальное окно корзины*/
+
+
+
+
 .active.header-menu_link {
   color: #59c0ed;
 }
@@ -208,6 +274,9 @@ body {
   right: -15px;
   top: 3px;
 }
+
+
+
 
 .header-menu_drop-list {
   margin: 0 0 0.5rem 0;
