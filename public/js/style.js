@@ -236,9 +236,13 @@ counts.forEach(countFunc);
         });
     });
     
-    function showCart(cart) {
-        console.log(cart);
-    }
   }); 
+
+function showCart(cart) {
+    if($.trim(cart) == '<h2>Корзина пуста</h2>') {
+
+    }
+}
+  
 /*Cart*/
 

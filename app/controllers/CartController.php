@@ -19,9 +19,10 @@ class CartController extends AppController {
         $cart = new Cart();
         $cart->addToCart($product, $gty);
         if($this->isAjax()) {
-            $this->loadView('cart');
+            $this->loadView('cart_modal');
         }
         redirect();
     }
 
 }
+?>

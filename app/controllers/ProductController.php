@@ -43,8 +43,6 @@ class ProductController extends AppController {
         //галлерея
         $gallery = \R::findAll('gallery', 'product_id = ?', [$product->id]);
 
-        //все модификации данного товара
-
         //табы продукта
         $reviews_product = \R::findAll('reviews_product', 'id_product = ?', [$product->id]);
         $tabs = \R::findAll('tabs_product', 'id_product = ?', [$product->id]);

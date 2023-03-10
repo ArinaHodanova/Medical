@@ -1,3 +1,26 @@
+<div class="overlay" style="display: none"></div>
+<?
+    echo '<pre>';
+    print_r($_SESSION);
+    echo '</pre>';
+
+// unset($_SESSION['cart']);
+// unset($_SESSION['cart.qty']);
+// unset($_SESSION['cart.sum']);
+
+?>
+<!--Корзина-->
+<div style="display: none; width: 500px;" id="cart" class="cart__fade">
+	<h2 class="cart__title">Корзина</h2>
+  <div class="cart__body">
+
+  </div>
+  <button class="cart__btn-continue">Продолить покупки</button>
+  <a href="" class="cart__btn-design"> Оформить заказ</a>
+  <button class="cart__btn-clear">Очистить козину</button>
+</div>
+<!--/Корзина-->
+
 <header class="header">
       <div class="header-top">
         <div class="container header-top__row">

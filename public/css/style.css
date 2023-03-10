@@ -223,6 +223,9 @@ body {
   font-size: 14px;
   font-weight: normal;
 }
+.header-menu_drop-link a:hover {
+  color: #59c0ed;
+}
 
 .header-menu_link.link::after {
   display: none;

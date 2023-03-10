@@ -27,9 +27,6 @@
 <html>
 
 <?require_once 'header.php';?>
-<div class="overlay" style="display: none"></div>
-
-<div class="main">
   <?=$content?>
 </div>
 

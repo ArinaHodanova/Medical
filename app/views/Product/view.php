@@ -1,10 +1,3 @@
-<?
-  db($_SESSION);
-  // unset($_SESSION['cart.currency']);
-  // unset($_SESSION['cart.qty']);
-  // unset($_SESSION['cart.sum']);
-  // unset($_SESSION['cart']);
-?>
 
 <div class="container">
     <!--crumbs-->
