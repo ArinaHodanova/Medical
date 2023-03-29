@@ -8,11 +8,18 @@
             <div class="container main_slider-text">
                 <div class="slider-container main_slider-row">
                   <h1 class="main_slider-title"><?=$slide->title?></h1>
+                  <?if(!empty($slide->desc)):?>
+                    <p class="main_slider-descr"><?=$slide->desc?></p>
+                  <?endif?>
                   <ul class="main_slider-list">
-                    <li>
-                      <img src="img/slider/lnr-checkmark-circle.svg">
-                      <span>Поставка оборудования</span>
-                    </li>
+                  <?foreach($services_slider as $service):?>
+                      <?if($service->slider_id === $slide->id):?>
+                        <li>
+                            <img src="img/slider/lnr-checkmark-circle.svg">
+                            <span><?=$service->text?></span>
+                        </li>
+                      <?endif?>
+                  <?endforeach?> 
                   </ul>
                   <button class="btn btn-blue" type="submit">Позвонить</button>
                 </div>

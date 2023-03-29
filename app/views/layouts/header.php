@@ -1,8 +1,8 @@
 <div class="overlay" style="display: none"></div>
 <?
-    echo '<pre>';
-    print_r($_SESSION);
-    echo '</pre>';
+    // echo '<pre>';
+    // print_r($_SESSION);
+    // echo '</pre>';
 
 // unset($_SESSION['cart']);
 // unset($_SESSION['cart.qty']);
@@ -95,19 +95,36 @@
       </div><!--/header-body-->
 
     <div class="menu_block">
-      <div class="header-menu_catalog">
+      <div class="header-menu__catalog">
+
+          <div class="header-menu__burger">
+              <div class="header-menu__burger-btn">
+		              <span></span>
+		              <span></span>
+		              <span></span>
+              </div>
+              <p class="header-menu__burger-catalog">Каталог</p>
+	        </div>
+
+          <div class="header-menu__burger-drop">
+              <div class="header-menu__burger-row">
+                <p>dfdfg</p>
+              </div>
+          </div>
+
+      </div>
+      <!-- <div class="header-menu_catalog">
         <button class="menu_catalog_link" href="#">Каталог</button>
-        <!--выпадающее меню-->
+
         <div class="header-menu_body-drop">
           <div class="header-menu_drop-row">
             <p>dfdfg</p>
           </div>
         </div>
-        <!--!выпадающее меню-->
-      </div>
+
+      </div> -->
 
       <!--new menu-->
-      
       <nav class="header-menu">
           <?new app\widgets\menu\Menu([
             'tpl' => WWW . '/menu/top_menu.php',

@@ -164,8 +164,91 @@ body {
 }
 /**модальное окно корзины*/
 
+/**menu catalog*/
+.header-menu__burger .header-menu__burger-catalog {
+  color: #2e2e2e;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.header-menu__catalog.active .header-menu__burger-catalog {
+  color: #59c0ed;
+}
 
+.header-menu__burger {
+  display: flex;
+  align-items: center;
+}
 
+.header-menu__catalog .header-menu__burger-btn {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  cursor: pointer;
+}
+.header-menu__catalog .header-menu__burger-btn span {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  width: 25px;
+  height: 2px;
+  background: #2e2e2e;
+  top: 50%;
+  left: 15px;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+}
+.header-menu__catalog .header-menu__burger-btn span:nth-of-type(2) {
+  top: calc(50% - 7px);
+}
+.header-menu__catalog .header-menu__burger-btn span:nth-of-type(3) {
+  top: calc(50% + 7px);
+}
+
+.header-menu__catalog.active .header-menu__burger-btn span { 
+  background: #59c0ed;
+}
+.header-menu__catalog.active .header-menu__burger-btn span:first-of-type {
+  opacity: 0;
+}
+.header-menu__catalog.active .header-menu__burger-btn span:nth-of-type(2) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -moz-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  -o-transform: translate(-50%, -50%) rotate(45deg);
+}
+.header-menu__catalog.active .header-menu__burger-btn span:nth-of-type(3) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  -moz-transform: translate(-50%, -50%) rotate(-45deg);
+  -ms-transform: translate(-50%, -50%) rotate(-45deg);
+  -o-transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.header-menu__catalog .header-menu__burger-drop {
+  background: #b78787;
+  right: 0;
+  width: 100%;
+  margin: 11px 0 0 0;
+  position: absolute;
+  height: 0;
+  display: none;
+  transition: height 0.7s ease-in-out;
+  -webkit-transition: height 0.7s ease-in-out;
+  -moz-transition: height 0.7s ease-in-out;
+  -ms-transition: height 0.7s ease-in-out;
+  -o-transition: height 0.7s ease-in-out;
+}
+.header-menu__catalog.active .header-menu__burger-drop {
+  display: block;
+}
 
 .active.header-menu_link {
   color: #59c0ed;
@@ -562,8 +645,8 @@ margin-right: 20px;
   background-position: center;
 }
 .main_slider-row {
-  max-width: 500px;
-  width: 500px;
+  max-width: 600px;
+  width: 600px;
 }
 .main_slider-text {
   justify-content: center;
@@ -583,6 +666,13 @@ margin-right: 20px;
   font-size: 35px;
   font-weight: 800;
   color: #59c0ed;
+}
+.main_slider-descr {
+  margin: 0 0 20px 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #2e2e2e;
+  padding: 0;
 }
 .main_slider-list {
   margin: 0 0 30px 0;

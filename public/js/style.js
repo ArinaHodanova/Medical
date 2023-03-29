@@ -77,6 +77,17 @@ window.addEventListener("load", function (e) {
   initSliders();
 });
 
+/*Меню каталог*/
+const catalog = () => { 
+const headerMenuBurger = document.querySelector('.header-menu__catalog');
+
+headerMenuBurger.addEventListener('click' , function() {
+  headerMenuBurger.classList.toggle('active');
+});
+
+}
+catalog();
+/*/Меню каталог*/
 
 /*Меню аккордеон*/
 const accordion = () => { 
