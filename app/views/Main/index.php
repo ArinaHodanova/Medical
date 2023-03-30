@@ -462,7 +462,50 @@
   </div><!--container-->
 </section>
 
+<!--Nes-->
 <section class="news_section">
+  <div class="container">
+    <h2 class="review_title">Новости</h2>
+
+    <div class="news__container">
+        <div class="news__block">
+            <div class="news__block-row">
+                <div class="news__block-img">
+                  <img src="/img/about-bg-min.png">
+                </div>
+                <div class="news__block-text">
+                    <h2>Стоматологическое оборудование и инструменты</h2>
+                    <p>2023-01-03</p>
+                    <p>Широкий выбор стоматологического оборудования и инструментов в каталоге МедКомплекса А.В.К.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper slider-news">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="container">Slide 1</div>
+              </div>
+              <div class="swiper-slide">
+                <div class="container">Slide 2</div>
+              </div>
+              <div class="swiper-slide">
+                <div class="container">Slide 3</div>
+              </div>
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+
+
+  </div>
+</section>
+<!--/Nes-->
+
+
+<section class="news_section" style="display:none">
   <div class="container">
     <h2 class="review_title">Новости</h2>
 
@@ -559,7 +602,12 @@
             </div><!--/swiper-slide_img-->
             <div class="blog-slide_text">
               <a href="blog/<?=$value->alias?>" class="blog-slide_title"><?=$value->title?></a>
-              <p class="blog-slide_desk"><?=$value->preview?></p>
+              <div class="blog-slide_desk">
+                 <p><?=$value->preview?></p>
+              </div>
+              <div class="blog-slide_btn">
+                <a href="">Подробнее </a>
+              </div>
             </div>
           </div><!--/swiper-slide-->
           <?endforeach?>

@@ -15,7 +15,17 @@ document.onscroll = function(evt) {
         watchSlidesProgress: true,
       });
     }
-  
+
+    if (document.querySelector('.slider-news')) {
+      var swiper_product_card = new Swiper('.slider-news', {
+        loop: true,
+        spaceBetween: 10,
+        slidesPerView: 2,
+        freeMode: true,
+        watchSlidesProgress: true,
+      });
+    }
+
     if (document.querySelector('.swiper-product_card2')) {
       new Swiper('.swiper-product_card2', {
         //loop: true,
