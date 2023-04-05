@@ -474,28 +474,45 @@
                   <img src="/img/about-bg-min.png">
                 </div>
                 <div class="news__block-text">
-                    <h2>Стоматологическое оборудование и инструменты</h2>
-                    <p>2023-01-03</p>
-                    <p>Широкий выбор стоматологического оборудования и инструментов в каталоге МедКомплекса А.В.К.</p>
+                    <h2 class="news__block-title"></h2>
+                    <p class="news__block-data"></p>
+                    <p class="news__block-desk"></p>
+                    <a href="" class="more_link news__block-link"><span>Подробнее</span></a>
                 </div>
             </div>
         </div>
 
         <div class="swiper slider-news">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="container">Slide 1</div>
+              <?foreach($news as $value):?>
+              <div class="swiper-slide slider-news__container">
+                      
+                    <div class="slider-news__img">
+                        <?if(!empty($value->img)):?>
+                        <img src="<?=$value->img?>">
+                        <?endif?> 
+                    </div>
+                    
+                    <p class="slider-news__data"><?=$value->date?></p>
+                    <p class="slider-news__title"><?=$value->title?></p>
+                    <p class="slider-news__desk"><?=$value->preview?></p> 
+                    <a href="<?=$value->alias?>" class="more_link"><span>Подробнее</span></a>
               </div>
-              <div class="swiper-slide">
-                <div class="container">Slide 2</div>
-              </div>
-              <div class="swiper-slide">
-                <div class="container">Slide 3</div>
-              </div>
+              <?endforeach?>
             </div>
 
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
+            <div class="slider-news-btn">
+              <div class="slider-news__prev">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+                <path fill="#000000" d="M14 20c0.128 0 0.256-0.049 0.354-0.146 0.195-0.195 0.195-0.512 0-0.707l-8.646-8.646 8.646-8.646c0.195-0.195 0.195-0.512 0-0.707s-0.512-0.195-0.707 0l-9 9c-0.195 0.195-0.195 0.512 0 0.707l9 9c0.098 0.098 0.226 0.146 0.354 0.146z"></path>
+                </svg>
+              </div>  
+              <div class="slider-news__next">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+                <path fill="#000000" d="M5 20c-0.128 0-0.256-0.049-0.354-0.146-0.195-0.195-0.195-0.512 0-0.707l8.646-8.646-8.646-8.646c-0.195-0.195-0.195-0.512 0-0.707s0.512-0.195 0.707 0l9 9c0.195 0.195 0.195 0.512 0 0.707l-9 9c-0.098 0.098-0.226 0.146-0.354 0.146z"></path>
+                </svg>
+              </div> 
+            </div><!--/review_prod-btn-->
         </div>
     </div>
 
@@ -606,7 +623,9 @@
                  <p><?=$value->preview?></p>
               </div>
               <div class="blog-slide_btn">
-                <a href="">Подробнее </a>
+                <a href="<?=$value->alias?>" class="more_link blog-slide_link">
+                  <span>Подробнее</span>
+                </a>
               </div>
             </div>
           </div><!--/swiper-slide-->

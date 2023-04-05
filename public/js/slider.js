@@ -18,12 +18,43 @@ document.onscroll = function(evt) {
 
     if (document.querySelector('.slider-news')) {
       var swiper_product_card = new Swiper('.slider-news', {
-        loop: true,
-        spaceBetween: 10,
         slidesPerView: 2,
-        freeMode: true,
-        watchSlidesProgress: true,
+        spaceBetween: 10,
+        loop: true,
+        navigation: {
+          nextEl: '.slider-news__next',
+          prevEl: '.slider-news__prev',
+        },
+        on: {
+          init: function (swiper) {
+            reviews(swiper);
+          },
+          slideChange: function (swiper) {
+            reviews(swiper);
+          }
+        }
       });
+    }
+
+    function reviews(swiper) {
+        const newsBlockImg = document.querySelector('.news__block-img img'),
+              newsBlockTitle = document.querySelector('.news__block-title'),
+              newsBlockData = document.querySelector('.news__block-data'),
+              newsBlockDesk = document.querySelector('.news__block-desk'),
+              newsBlockLink = document.querySelector('.news__block-link'),
+
+              swiperSlideActive = swiper.slides[swiper.activeIndex],
+              atrrHref = swiperSlideActive.children[4].getAttribute("href");
+              atrrSrc = swiperSlideActive.children[0].querySelector('.slider-news__img img').getAttribute("src");
+
+              newsBlockTitle.textContent = swiperSlideActive.children[2].innerText;
+              newsBlockData.textContent = swiperSlideActive.children[1].innerText;
+              newsBlockDesk.textContent = swiperSlideActive.children[3].innerText;
+
+              newsBlockLink.setAttribute('href', atrrHref);//передаем ссылку
+              newsBlockImg.setAttribute('src', atrrSrc);//передаем ссылку
+
+              console.log(atrrSrc);
     }
 
     if (document.querySelector('.swiper-product_card2')) {
