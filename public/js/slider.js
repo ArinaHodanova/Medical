@@ -25,6 +25,15 @@ document.onscroll = function(evt) {
           nextEl: '.slider-news__next',
           prevEl: '.slider-news__prev',
         },
+        breakpoints: {// настройки для разных разрешений
+          300: {
+              slidesPerView: 1,
+          },
+          576: {
+              slidesPerView: 2,
+              spaceBetween: 10
+          }
+        },
         on: {
           init: function (swiper) {
             reviews(swiper);
@@ -80,7 +89,7 @@ document.onscroll = function(evt) {
           nextEl: ".main_prod-next",
           prevEl: ".main_prod-prev",
         },
-        breakpoints: {// настройки для разных разрешений
+        breakpoints: {
           300: {
               slidesPerView: 1,
           },

@@ -3626,7 +3626,12 @@ section.map .map_form {
   object-fit: contain;
 }
 @media (max-width: 576px) {
-  .advantage {
+  .advantage,
+  .section_catalog,
+  .main_product-slider,
+  .about_company,
+  .news_section,
+  .review_section {
     margin-bottom: 60px;
   }
   .catalog-main {
@@ -3637,6 +3642,27 @@ section.map .map_form {
     width: 200px;
     height: 45px; 
   } 
+  .slider-news__desk {
+    overflow: hidden;
+    max-height: 80px;
+    text-align: left;
+    font-size: .7em;
+    display: block;
+  }
+  .slider-news__title {
+    /*height: 60px; */
+  }
+  .more_link.slider-news__more_link {
+    width: 100%;
+    padding-top: 2em;
+    background: #fff;
+    background: -webkit-gradient(linear,left bottom,left top,color-stop(45%,#fff),to(rgba(255,255,255,0)));
+    background: -o-linear-gradient(bottom,#fff 45%,rgba(255,255,255,0));
+    background: linear-gradient(0deg,#fff 45%,rgba(255,255,255,0));
+    background: -o-linear-gradient(bottom,#fff 45%,rgba(255,255,255,0));
+    bottom: -10px;
+    position: absolute;
+  }
   .box-3,
   .box-1,
   .box-4 {
@@ -4161,11 +4187,49 @@ button.product_accordion-title:hover, button.accordion.is-open {
     max-width: 100px;
     cursor: pointer;
     width: 40%;
-    height: auto; } }
+    height: auto; 
+  } 
+  .news__container {
+    flex-wrap: wrap;
+  }
+  .news__block {
+    width: 100%;
+  }
+  .news__container .slider-news {
+    width: 100%;
+  }
+  .news__block-img {
+    width: 45%;
+  }
+  .news__block-text {
+    width: 48%;
+  } 
+  .news__block-title {
+    line-height: 1.3rem;
+    font-size: 1.3em;
+    margin: 0;
+    padding: 0 0 0.8em 0;
+  }
+  .news__block-row {
+    height: 220px;
+  }
+  .news__block-img img {
+    height: 220px;
+  }
+  .news__block-img {
+    height: 220px;
+  }
+}
 
 @media (max-width: 576px) {
   .footer_row-logo {
     grid-column: auto / span 12;
+  }
+  .news__block {
+    display: none;
+  }
+  .news__container .slider-news {
+    width: 100%;
   }
   .product_card {
     flex-direction: column;

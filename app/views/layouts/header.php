@@ -9,6 +9,7 @@
 // unset($_SESSION['cart.sum']);
 
 ?>
+
 <!--Корзина-->
 <div class="cart__fade" id="cart">
 	<div class="popup">

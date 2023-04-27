@@ -496,7 +496,7 @@
                     <p class="slider-news__data"><?=$value->date?></p>
                     <p class="slider-news__title"><?=$value->title?></p>
                     <p class="slider-news__desk"><?=$value->preview?></p> 
-                    <a href="<?=$value->alias?>" class="more_link"><span>Подробнее</span></a>
+                    <a href="<?=$value->alias?>" class="more_link slider-news__more_link"><span>Подробнее</span></a>
               </div>
               <?endforeach?>
             </div>
