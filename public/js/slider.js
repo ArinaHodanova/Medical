@@ -63,7 +63,6 @@ document.onscroll = function(evt) {
               newsBlockLink.setAttribute('href', atrrHref);//передаем ссылку
               newsBlockImg.setAttribute('src', atrrSrc);//передаем ссылку
 
-              console.log(atrrSrc);
     }
 
     if (document.querySelector('.swiper-product_card2')) {

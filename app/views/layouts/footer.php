@@ -63,9 +63,9 @@
       <p class="footer_bottom">ООО «Медикал Трейд» 100000, г. Город, Щёлковское шоссе, ОГРН 1027700268298</p>
     </div>
     <?
-$logs = \R::getDatabaseAdapter()
-    ->getDatabase()
-    ->getLogger();
-db($logs->grep('SELECT'));
+// $logs = \R::getDatabaseAdapter()
+//     ->getDatabase()
+//     ->getLogger();
+// db($logs->grep('SELECT'));
 ?>
 </footer>

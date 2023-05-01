@@ -651,3 +651,38 @@
 
   </div>
 </section>
+
+<section class="feedback__form-section">
+    <div class="container"> 
+      <form method="POST" class="feedback__form">
+      <h2 class="feedback__form-title">Остались вопросы ? Мы поможем вам с поиском</h2>
+          <div class="feedback__form-row">
+            <div class="feedback__form-block name">
+              <lable class="feedback__form-lable">Ваше имя</lable>
+              <input type="text" class="feedback__form-input" required placeholder="Имя*">
+            </div><!--/feedback__form-block-->
+
+            <div class="feedback__form-block phone">
+              <lable class="feedback__form-lable">Ваш телефон</lable>
+              <input type="text" class="feedback__form-input" required placeholder="Ваш телефон*">
+            </div><!--/feedback__form-block-->
+
+            <div class="feedback__form-block phone">
+              <lable class="feedback__form-lable">Ваша почта</lable>
+              <input type="text" class="feedback__form-input" required placeholder="Email*">
+            </div><!--/feedback__form-block-->
+            <button class="feedback__form-red btn">Отправить</button>
+          </div>
+          <div class="feedback__stock-check">
+              <label class="feedback__label">
+                  <input type="checkbox" class="feedback__label-detail" name="slide_1" value="">
+                  <span class="feedback__label-btn"></span>
+                  <span class="feedback__label-text">Нажимая на кнопку «Отправить», я соглашаюсь с 
+                    <a href="/privacy-policy/" target="_blank">условиями политики конфиденциальности</a>.
+                  </span>
+              </label>
+			    </div>
+          
+      </form>
+    </div>
+</section>

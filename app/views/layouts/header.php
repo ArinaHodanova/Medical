@@ -96,20 +96,84 @@
       </div><!--/header-body-->
 
     <div class="menu_block">
-      <div class="header-menu__catalog">
+      <div class="burger-menu">
 
-          <div class="header-menu__burger">
-              <div class="header-menu__burger-btn">
+          <div class="burger-menu__name">
+              <div class="burger-menu__btn">
 		              <span></span>
 		              <span></span>
 		              <span></span>
               </div>
-              <p class="header-menu__burger-catalog">Каталог</p>
+              <p class="burger-menu__title">Каталог</p>
 	        </div>
 
-          <div class="header-menu__burger-drop">
-              <div class="header-menu__burger-row">
-                <p>dfdfg</p>
+          <div class="burger-menu__drop">
+              <div class="burger-menu__drop-row">
+                  <!--первая колонка-->
+                  <div class="burger-menu__col1">
+                      <div>Мед. оборудование</div>
+                      <div>Запчасти и расходники</div>
+                      <div>Медицинская мебель</div>
+                  </div>
+                  <!--/первая колонка-->
+                  <!--вторая колонка-->
+                  <div class="burger-menu__col2">
+                    <div class="burger-menu__col2-inner">
+                      <div class="burger-menu__col2-blok">
+                        <p class="burger-menu__col2-title">Мед. оборудование</p>
+                        <ul>
+                          <li><a href="">Мед. оборудование 1 товар</a></li>
+                          <li><a href="">Мед. оборудование 2 товар</a></li>
+                          <li><a href="">Мед. оборудование 3 товар</a></li>
+                          <li><a href="">Мед. оборудование 2 товар</a></li>
+                          <li><a href="">Мед. оборудование 3 товар</a></li>
+                        </ul>
+                      </div>
+                      <div class="burger-menu__col2-blok">
+                        <p class="burger-menu__col2-title">Мед. оборудование Первый товар</p>
+                        <ul>
+                          <li><a href="">Мед. оборудование 1 товар</a></li>
+                        </ul>
+                      </div>
+                    </div><!--/burger-menu__col2-inner-->
+                    <div class="burger-menu__col2-inner">
+                      <div class="burger-menu__col2-blok">
+                        <p class="burger-menu__col2-title">Запчасти и расходники</p>
+                        <ul>
+                          <li><a href="">Запчасти и расходники 1 товар</a></li>
+                          <li><a href="">Запчасти и расходники 2 товар</a></li>
+                          <li><a href="">Запчасти и расходники 3 товар</a></li>
+                          <li><a href="">Запчасти и расходники 2 товар</a></li>
+                          <li><a href="">Запчасти и расходники 3 товар</a></li>
+                        </ul>
+                      </div>
+                      <div class="burger-menu__col2-blok">
+                        <p class="burger-menu__col2-title">Запчасти и расходники Первый товар</p>
+                        <ul>
+                          <li><a href="">Запчасти и расходники 1 товар</a></li>
+                        </ul>
+                      </div>
+                    </div><!--/burger-menu__col2-inner-->
+                    <div class="burger-menu__col2-inner">
+                      <div class="burger-menu__col2-blok">
+                        <p class="burger-menu__col2-title">Медицинская мебель</p>
+                        <ul>
+                          <li><a href="">Медицинская мебель 1 товар</a></li>
+                          <li><a href="">Медицинская мебель 2 товар</a></li>
+                          <li><a href="">Медицинская мебель 3 товар</a></li>
+                          <li><a href="">Медицинская мебель 2 товар</a></li>
+                          <li><a href="">Медицинская мебель 3 товар</a></li>
+                        </ul>
+                      </div>
+                      <div class="burger-menu__col2-blok">
+                        <p class="burger-menu__col2-title">Медицинская мебель Первый товар</p>
+                        <ul>
+                          <li><a href="">Медицинская мебель 1 товар</a></li>
+                        </ul>
+                      </div>
+                    </div><!--/burger-menu__col2-inner-->
+                  </div><!--/burger-menu__col2-->
+                  <!--/вторая колонка-->
               </div>
           </div>
 
