@@ -46,8 +46,7 @@
         </div>
         <form class="footer_stock-form">
           <div class="footer_stock-input">				    	
-            <input class="stock-input" id="emil" type="email" name="form">                				    	
-            <label for="emil">Ваш e-mail<label>    				    	                        				    	
+            <input class="stock-input" id="emil" type="email" name="form" placeholder="Ваш Email*">			    	                        				    	
           </div>
           <button type="submit" class="footer_stock-btn btn btn-blue"><span>Подписаться</span></button>
 

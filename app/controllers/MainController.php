@@ -17,9 +17,10 @@ class MainController extends AppController {
     $news = \R::findAll('news');
     $blog = \R::findAll('blog');
     $reviews = \R::findAll('reviews');
+    $categories = \R::findAll('category');
 
     $this->setMeta('Главная страница', 'Описание', 'Ключевики');
-    $this->set(compact('advantage', 'brand', 'product', 'hits_product', 'new_product', 'discount_product', 'slider', 'reviews', 'news', 'blog', 'services_slider'));
+    $this->set(compact('categories', 'advantage', 'brand', 'product', 'hits_product', 'new_product', 'discount_product', 'slider', 'reviews', 'news', 'blog', 'services_slider'));
   }
   
 }

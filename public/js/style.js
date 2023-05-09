@@ -81,11 +81,12 @@ window.addEventListener("load", function (e) {
 
 
 const catalog = () => { 
+  const burgerMenuDrop = document.querySelector('.burger-menu__drop');
   const headerMenuBurger = document.querySelector('.burger-menu');
-
     headerMenuBurger.addEventListener('click' , function() {
     headerMenuBurger.classList.toggle('active');
   });
+  
 
   const Hover = {
     menu: {},
@@ -115,7 +116,8 @@ const catalog = () => {
               let subMenuChildren = [...this.subMenu.children];
   
               menuChildren.forEach(index => index.removeAttribute('style'));
-              subMenuChildren.forEach(index => index.removeAttribute('style'));
+              
+              subMenuChildren.forEach(index => index.classList.remove('active'));
   
               while(this.menu != parentElement && this.menu.contains(parentElement)) {
                 this.currentElement = parentElement;
@@ -125,8 +127,8 @@ const catalog = () => {
               if(!this.currentElement) return;
                
               let index = menuChildren.indexOf(this.currentElement);
-              this.currentElement.style.background = 'red';
-              subMenuChildren[index].style.display = 'flex';
+              this.currentElement.classList.add('active');
+              subMenuChildren[index].classList.add('active');
 
             }, this.time);
 
@@ -134,18 +136,19 @@ const catalog = () => {
     },
     out: function() {
         this.menu.onmouseout = (e) => { 
+
             if(!this.currentElement || this.menu === e.relatedTarget || !this.menu.contains(e.relatedTarget)) return;
             let relatedTarget = e.relatedTarget;
             while(this.menu.contains(relatedTarget)) {
                 if(relatedTarget === this.currentElement) return;
                 relatedTarget = relatedTarget.parentNode;
             }
-            this.currentElement.removeAttribute('style');
+            this.currentElement.classList.remove('active');
             this.currentElement = null;
         }
     },
   };
-  Hover.activate('.burger-menu__col1', '.burger-menu__col2');
+  Hover.activate('.burger-menu__col1 ul', '.burger-menu__col2');
 
 }
 catalog();
@@ -353,3 +356,20 @@ function showCart(cart) {
   
 /*Cart*/
 
+
+$("img.img-svg").each(function () {
+  var $img = $(this);
+  var imgClass = $img.attr("class");
+  var imgURL = $img.attr("src");
+  $.get(imgURL, function (data) {
+      var $svg = $(data).find("svg");
+      if (typeof imgClass !== "undefined") {
+          $svg = $svg.attr("class", imgClass + " replaced-svg");
+      }
+      $svg = $svg.removeAttr("xmlns:a");
+      if (!$svg.attr("viewBox") && $svg.attr("height") && $svg.attr("width")) {
+          $svg.attr("viewBox", "0 0 " + $svg.attr("height") + " " + $svg.attr("width"))
+      }
+      $img.replaceWith($svg);
+  }, "xml");
+});

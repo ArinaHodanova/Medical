@@ -171,35 +171,110 @@ body {
   margin: 0 auto;
 }
 .burger-menu__col1 {
+  cursor: pointer;
+  padding-left: 20px;
   padding-right: 12px;
-  width: 20%;
+  width: 21%;
+  padding: 1.7rem 1.5rem;
 }
-.burger-menu__col1 div {
+.burger-menu__col1 p { 
+  width: 210px;
+  color: #000000;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-block;
+}
+.burger-menu__col1-item.active p {
+  color: #59c0ed;
+}
+.burger-menu__col1-item {
+  align-items: center;
+  display: flex;
   padding: 10px 0;
   margin-bottom: 5px;
+  height: 25px;
+}
+
+.burger-menu__col1-image {
+  padding-right: 15px;
+}
+.img-svg {
+  width: 24px;
+  height: 24px;
+}
+
+.burger-menu__col1-item .burger-menu__col1-image .img-svg path {
+  fill: #b3bcc5;
+}
+.burger-menu__col1-item.active .burger-menu__col1-image .img-svg path {
+  fill: #59c0ed;
+}
+.burger-menu__col1-img {
+  width: 24px;
+}
+.burger-menu__col1-list {
+  padding: 0;
+  margin: 0;  
+}
+.burger-menu__col1-item .burger-menu__col1-img svg {
+  display: none;
+}
+.burger-menu__col1-item.active .burger-menu__col1-img {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+.burger-menu__col1-item.active .burger-menu__col1-img svg {
+  display: block;
+  color: #59c0ed;
+}
+.burger-menu__col2-inner.active {
+  display: flex; 
+  width: 100%;
+  max-height: 370px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-wrap: wrap;
+  gap: 2.5rem 0rem;
+  padding: 1.7rem 1.5rem;
 }
 .burger-menu__col2-inner {
   display: none;
-  overflow-x: hidden;
-  max-height: 200px;
-  overflow-y: auto;
-  flex-wrap: wrap;
-  gap: 2.5rem 0rem;
-  /* display: flex; */
 }
 .burger-menu__col2-blok {
-  flex: 0 0 25%;
-  width: 25%;
+  padding: 5px 20px 15px 20px;
+  -ms-flex: 0 0 25%;
+  flex: 0 0 30%;
+  max-width: 30%;
+  box-sizing: border-box;
 }
 .burger-menu__col2 {
-  margin: 10px 0 30px 0;
+  max-height: 370px;
+  overflow-x: hidden;
   width: 70%;
 }
+.burger-menu__col2-list {
+  margin: 0 0 0.5rem 0;
+  padding: 0;
+}
+.burger-menu__col2-list li {
+  list-style: none;
+}
 
+.burger-menu__col2-list li a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 14px;
+  font-weight: normal;
+}
 
 .burger-menu__col2-title {
+  text-decoration: none;
+  color: #000000;
+  font-size: 16px;
+  position: relative;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
   padding: 0;
-  margin: 0;
 }
 .burger-menu__name .burger-menu__title {
   color: #2e2e2e;
@@ -271,7 +346,7 @@ body {
 .burger-menu .burger-menu__drop {
   right: 0;
   width: 100%;
-  margin: 11px 0 0 0;
+  margin: 10px 0 0 0;
   position: absolute;
   height: 0;
   display: none;
@@ -284,7 +359,7 @@ body {
 .burger-menu.active .burger-menu__drop {
   display: block;
   height: auto;
-  background: #b78787;
+  background: #c8c8c8;
 }
 
 .active.header-menu_link {
@@ -3669,15 +3744,18 @@ section.map .map_form {
   height: 100%;
   object-fit: contain;
 }
+
 @media (max-width: 576px) {
   .advantage,
   .section_catalog,
   .main_product-slider,
   .about_company,
   .news_section,
-  .review_section {
+  .review_section,
+  .feedback__form-section {
     margin-bottom: 60px;
   }
+
   .catalog-main {
     grid-gap: 20px 0px; 
   }
@@ -4243,6 +4321,14 @@ button.product_accordion-title:hover, button.accordion.is-open {
   color: #565656;
   font-size: .8em;
 }
+.stock-input {
+  padding: 0 10px;
+  font-size: .8em;
+}
+.stock-input::placeholder {
+  color: #565656;
+  font-size: .8em;
+}
 .feedback__form-lable {
   font-size: .9em;
   padding-bottom: 10px;
@@ -4377,8 +4463,33 @@ button.product_accordion-title:hover, button.accordion.is-open {
 }
 
 @media (max-width: 576px) {
+  .footer_stock-input {
+    margin-bottom: 20px;
+  }
+  .feedback__form-block.name, .feedback__form-block.phone {
+    width: 100%;
+  }
   .blog-swip .blog-slide_container {
     flex-direction: column;
+  }
+  .feedback__stock-check {
+    padding: 0 20px;
+  }
+  .feedback__form {
+    padding: 20px 0;
+  }
+  .feedback__form-row {
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+  .feedback__label-btn {
+    width: 25px;
+    height: 15px;
+    border: none;
+  }
+  .feedback__form-title {
+    font-size: 1.3em;
+    padding: 20px 10px 20px 20px;
   }
   .main_product-block {
     text-align: center;
