@@ -4267,7 +4267,6 @@ button.product_accordion-title:hover, button.accordion.is-open {
   display: none; 
 }
 .feedback__form {
-  padding: 60px 40px 50px 40px;
   width: 100%;
   font-weight: 600;
   background-size: cover;
@@ -4670,3 +4669,15 @@ button.product_accordion-title:hover, button.accordion.is-open {
     padding-top: 3px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+

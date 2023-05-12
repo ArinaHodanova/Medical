@@ -192,19 +192,9 @@
                   </div><!--/burger-menu__col2-->
                   <!--/вторая колонка-->
               </div>
-          </div>
+          </div><!--/burger-menu__drop-->
 
       </div>
-      <!-- <div class="header-menu_catalog">
-        <button class="menu_catalog_link" href="#">Каталог</button>
-
-        <div class="header-menu_body-drop">
-          <div class="header-menu_drop-row">
-            <p>dfdfg</p>
-          </div>
-        </div>
-
-      </div> -->
 
       <!--new menu-->
       <nav class="header-menu">
@@ -219,7 +209,7 @@
           ]);?>
       </nav>
       <!--/new menu-->
-    </div><!--/menu_catalog-->
+    </div>
 
 </div>
     </div><!--container-->
