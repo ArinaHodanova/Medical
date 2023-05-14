@@ -6,11 +6,11 @@ use ishop\App;
 
 class Menu {
     protected $data;
-    protected $tree;
+    protected $tree;//массив дерева из данных
     protected $menuHtml;
-    protected $tpl;
-    protected $container = 'ul';
-    protected $table = 'category';
+    protected $tpl; //шаблон меню
+    protected $container;
+    protected $table = 'category';//таблица в БД
     protected $cache = 3600;
     protected $cacheKey = 'ishop_menu';
     protected $attrs = [];
@@ -18,7 +18,7 @@ class Menu {
     protected $class = '';
 
     public function __construct($options = []) {
-        $this->tpl = __DIR__ . '/menu_tpl/menu.php';
+        $this->tpl =  __DIR__ . '/menu_tpl/menu.php';
         $this->getOptions($options);
         $this->run();
     }
@@ -32,6 +32,7 @@ class Menu {
         }
     }
 
+    //формируем меню
     protected function run() {
         $cache = Cache::instance();
         $this->menuHtml = $cache->get($this->cacheKey);
@@ -82,7 +83,7 @@ class Menu {
 
     /*
       Parameters: 
-        array;
+        array; дерево
       Desctiptiop: получаем HTML
       Return value: string
     */

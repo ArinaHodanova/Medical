@@ -671,9 +671,8 @@
               <lable class="feedback__form-lable">Ваша почта</lable>
               <input type="text" class="feedback__form-input" required placeholder="Email*">
             </div><!--/feedback__form-block-->
-            <button class="feedback__form-red btn">Отправить</button>
-          </div>
-          <div class="feedback__stock-check">
+
+            <div class="feedback__stock-check">
               <label class="feedback__label">
                   <input type="checkbox" class="feedback__label-detail" name="slide_1" value="">
                   <span class="feedback__label-btn"></span>
@@ -681,8 +680,11 @@
                     <a href="/privacy-policy/" target="_blank">условиями политики конфиденциальности</a>.
                   </span>
               </label>
-			    </div>
-          
+			      </div>
+
+          </div>
+
+          <button class="feedback__form-red btn">Отправить</button>
       </form>
     </div>
 </section>

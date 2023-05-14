@@ -77,23 +77,28 @@ window.addEventListener("load", function (e) {
   initSliders();
 });
 
+
 /*Меню каталог*/
-
-
 const catalog = () => { 
   const burgerMenuDrop = document.querySelector('.burger-menu__drop');
   const headerMenuBurger = document.querySelector('.burger-menu');
     headerMenuBurger.addEventListener('click' , function() {
-    headerMenuBurger.classList.toggle('active');
-  });
-  
+      headerMenuBurger.classList.toggle('active'); 
+    });
+
+  document.body.addEventListener('click', (event) => {
+    const target = event.target;
+    if(!target.closest('.burger-menu')) {
+      headerMenuBurger.classList.remove('active');
+    }
+  })
 
   const Hover = {
     menu: {},
     subMenu: {},
     currentElement: null,
     timeoutOver: null, //эффект перескакивания
-    time: 200,//время появления блока при наведении
+    time: 400,//время появления блока при наведении
     activate: function(menu, subMenu, time) {
         if(typeof menu === 'undefined' || typeof subMenu === 'undefined') return;
         if(typeof time !== 'undefined') this.time = parseInt(time);
@@ -164,6 +169,7 @@ const accordion = () => {
       elem.children[1].style.height = `${elem.children[1].scrollHeight}px`; // узнали и задали высоту элемента (работает только если display !== none)
     }
   })
+  
 
   const open = (button, dropDown) => {
     closeAllDrops();
@@ -357,7 +363,7 @@ function showCart(cart) {
 /*Cart*/
 
 
-$("img.img-svg").each(function () {
+$(".img-svg").each(function () {
   var $img = $(this);
   var imgClass = $img.attr("class");
   var imgURL = $img.attr("src");

@@ -11,7 +11,7 @@
       <?if(!empty($category['childs'])):?>
         <?foreach($category['childs'] as $key => $value):?>
           <div class="header-menu_drop-block">
-              <p class="header-menu_drop-title"><?=$value['title']?></p>
+              <p class="header-menu_drop-categiry-title"><?=$value['title']?></p>
               <?if(!empty($value['childs'])):?>
               <ul class="header-menu_drop-list">
                 <?$arr = array_slice($value['childs'], 0, 4, true);?>

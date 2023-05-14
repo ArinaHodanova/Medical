@@ -98,7 +98,9 @@
 
     <div class="menu_block">
       <div class="burger-menu">
-
+      <?$menu = new app\models\MenuCatalog();
+      $categories = $menu->getTreeMenu();?>
+      
           <div class="burger-menu__name">
               <div class="burger-menu__btn">
 		              <span></span>
@@ -114,81 +116,49 @@
                   <div class="burger-menu__col1">
                       <ul class="burger-menu__col1-list">
                       <?foreach($categories as $category):?>
-                        <?if($category['parent_id'] === '0'):?>
+                        <?if($category['parent_id'] === '0' && isset($category['childs'])):?>
                           <li class="burger-menu__col1-item">
                                 <?if(!empty($category['img'])):?>
                                 <div class="burger-menu__col1-image">
                                   <img src="<?=$category['img']?>" class="img-svg">
                                 </div>
                                 <?endif?>
-                                <p><?=$category['title'];?></p>
+                                <a href="<?=$category['alias'];?>"><?=$category['title'];?></a>
                                 <div class="burger-menu__col1-img"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="kd"><path fill="currentColor" d="M9.293 6.293a1 1 0 0 0 0 1.414L13.586 12l-4.293 4.293a1 1 0 1 0 1.414 1.414l5-5a1 1 0 0 0 0-1.414l-5-5a1 1 0 0 0-1.414 0Z"></path></svg></div>
                           </li>
                         <?endif?>
                       <?endforeach?>
                       </ul>
+                      <?foreach($categories as $category):?>
+                          <?if(!isset($category['childs'])):?>
+                              <a class="burger-menu__col1-link" href="<?=$category['alias'];?>"><?=$category['title'];?></a>
+                          <?endif?>
+                      <?endforeach?>
                       <a>Телефон: 8 (888) 888-88-88 </a>
                   </div>
                   <!--/первая колонка-->
+
                   <!--вторая колонка-->
                   <div class="burger-menu__col2">
+                    <?foreach($categories as $category_k => $category_v):?>
                     <div class="burger-menu__col2-inner">
-                      <div class="burger-menu__col2-blok">
-                        <p class="burger-menu__col2-title">Мед. оборудование</p>
-                        <ul class="burger-menu__col2-list">
-                          <li><a href="">Мед. оборудование 1 товар</a></li>
-                          <li><a href="">Мед. оборудование 2 товар</a></li>
-                          <li><a href="">Мед. оборудование 3 товар</a></li>
-                          <li><a href="">Мед. оборудование 2 товар</a></li>
-                          <li><a href="">Мед. оборудование 3 товар</a></li>
-                        </ul>
-                      </div>
-                      <div class="burger-menu__col2-blok">
-                        <p class="burger-menu__col2-title">Мед. оборудование Первый товар</p>
-                        <ul class="burger-menu__col2-list">
-                          <li><a href="">Мед. оборудование 1 товар</a></li>
-                        </ul>
-                      </div>
+                          <?if(isset($category_v['childs'])):?>
+                          <p class="burger-menu__col2-categor-title"><?=$category_v['title']?></p>
+                      <?foreach($category_v['childs'] as $childs_k => $childs_v):?>
+                        <div class="burger-menu__col2-blok">
+                          <p class="burger-menu__col2-title"><?=$childs_v['title']?></p>
+                          <?if(isset($childs_v['childs'])):?>
+                          <ul class="burger-menu__col2-list">
+                            <?foreach($childs_v['childs'] as $k => $v):?>
+                              <li><a href="<?=$v['title']?>"><?=$v['title']?></a></li>
+                            <?endforeach?>
+                          </ul>
+                          <?endif?>
+                        </div>
+                      <?endforeach?>
+                      <?endif?>
                     </div><!--/burger-menu__col2-inner-->
-
-                    <div class="burger-menu__col2-inner">
-                      <div class="burger-menu__col2-blok">
-                        <p class="burger-menu__col2-title">Запчасти и расходники</p>
-                        <ul class="burger-menu__col2-list">
-                          <li><a href="">Запчасти и расходники 1 товар</a></li>
-                          <li><a href="">Запчасти и расходники 2 товар</a></li>
-                          <li><a href="">Запчасти и расходники 3 товар</a></li>
-                          <li><a href="">Запчасти и расходники 2 товар</a></li>
-                          <li><a href="">Запчасти и расходники 3 товар</a></li>
-                        </ul>
-                      </div>
-                      <div class="burger-menu__col2-blok">
-                        <p class="burger-menu__col2-title">Запчасти и расходники Первый товар</p>
-                        <ul class="burger-menu__col2-list">
-                          <li><a href="">Запчасти и расходники 1 товар</a></li>
-                        </ul>
-                      </div>
-                    </div><!--/burger-menu__col2-inner-->
-
-                    <div class="burger-menu__col2-inner">
-                      <div class="burger-menu__col2-blok">
-                        <p class="burger-menu__col2-title">Медицинская мебель</p>
-                        <ul class="burger-menu__col2-list">
-                          <li><a href="">Медицинская мебель 1 товар</a></li>
-                          <li><a href="">Медицинская мебель 2 товар</a></li>
-                          <li><a href="">Медицинская мебель 3 товар</a></li>
-                          <li><a href="">Медицинская мебель 2 товар</a></li>
-                          <li><a href="">Медицинская мебель 3 товар</a></li>
-                        </ul>
-                      </div>
-                      <div class="burger-menu__col2-blok">
-                        <p class="burger-menu__col2-title">Медицинская мебель Первый товар</p>
-                        <ul class="burger-menu__col2-list">
-                          <li><a href="">Медицинская мебель 1 товар</a></li>
-                        </ul>
-                      </div>
-                    </div><!--/burger-menu__col2-inner-->
-
+                    <?endforeach?>
                   </div><!--/burger-menu__col2-->
                   <!--/вторая колонка-->
               </div>
